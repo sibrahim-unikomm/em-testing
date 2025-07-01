@@ -10,12 +10,13 @@
 SN_CSM_EC.init({
 moduleID: "https://unikommdemo11.service-now.com/#1e2543d0eb222610ffabf734bad0cd0a",
 loadFeature: SN_CSM_EC.loadEMFeature(),
-    lang: "en"
+    lang: "en",
+    setLang : changeLanguage
 });
 </script>
     <h1>Sample Website</h1>
 
-    <p>Button Added</p>
+    <p>Button Added 11</p>
 
     <button onClick="changeLanguage('en')">English</button>
 
@@ -25,6 +26,8 @@ loadFeature: SN_CSM_EC.loadEMFeature(),
 function changeLanguage(language) {
   alert(language);
 }
+
+        
 </script>
 
 </body>
