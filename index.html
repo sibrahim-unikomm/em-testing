@@ -15,9 +15,17 @@ loadFeature: SN_CSM_EC.loadEMFeature(),
 </script>
     <h1>Sample Website</h1>
 
-    <button>English</button>
+    <p>Button Added</p>
 
-    <button>Arabic</button>
+    <button onClick="changeLanguage('en')">English</button>
+
+    <button onClick="changeLanguage('ar')">Arabic</button>
+
+    <script>
+function changeLanguage(language) {
+  alert(language);
+}
+</script>
 
 </body>
 
