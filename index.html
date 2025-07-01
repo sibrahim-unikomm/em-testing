@@ -1,37 +1,38 @@
-<html>
+<html lang="ar">
 <head>
-<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
 </head>
-
 <body>
-<h1>Updated to English</h1>
-<script src="https://unikommdemo11.service-now.com/scripts/sn_csm_ec.js?v=5.6"></script>
-
 <h1>Sample Website</h1>
 
-<p>Button Added 11234567</p>
+<p>Button Added 112345678</p>
 
-<button onClick="changeLanguage('en')">English</button>
+<button onclick="changeLanguage('en')">English</button>
+<button onclick="changeLanguage('ar')">Arabic</button>
 
-<button onClick="changeLanguage('ar')">Arabic</button>
+<script src="https://unikommdemo11.service-now.com/scripts/sn_csm_ec.js?v=5.6"></script>
 
 <script>
-function changeLanguage(language) {
+// Default to the HTML lang attribute
+let selectedLanguage = document.documentElement.lang || 'en';
 
-        SN_CSM_EC.init({
-moduleID: "https://unikommdemo11.service-now.com/#1e2543d0eb222610ffabf734bad0cd0a",
-loadFeature: SN_CSM_EC.loadEMFeature(),
-lang : language
-});
+function getEMLanguage() {
+    return selectedLanguage;
 }
 
-    changeLanguage(en);
+function changeLanguage(language) {
+    selectedLanguage = language;
 
+    SN_CSM_EC.init({
+        moduleID: "https://unikommdemo11.service-now.com/#1e2543d0eb222610ffabf734bad0cd0a",
+        loadFeature: SN_CSM_EC.loadEMFeature(),
+        setLang: getEMLanguage
+    });
+}
 
-
-    
+// Initialize using HTML lang attribute on page load
+changeLanguage(selectedLanguage);
 </script>
 
 </body>
-
 </html>
